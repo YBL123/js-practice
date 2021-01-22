@@ -1,0 +1,19 @@
+{
+  "name": "js-fcc-challenge-one",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Benga-boy/js-fcc-challenge-one.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Benga-boy/js-fcc-challenge-one/issues"
+  },
+  "homepage": "https://github.com/Benga-boy/js-fcc-challenge-one#readme"
+}
