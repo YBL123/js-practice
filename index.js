@@ -5,7 +5,7 @@
 // Only integers greater than or equal to zero will be supplied to the function.
 // If n === 0 return 1
 
-function factorialize(num) {
+const factorialize = (num) => {
   const arr = []
   let result = 0
   if (num > 0) {
@@ -31,7 +31,7 @@ factorialize(5)
 // Repeat a given string str (first argument) for num times (second argument). Return an empty string if num is not a positive number. For the purpose of this challenge, do not use the built-in .repeat() method.
 // "abc" === "abcabcabc"
 
-function repeatStringNumTimes(str, num) {
+const repeatStringNumTimes = (str, num) => {
   const arr = []
   let result = ''
 
@@ -54,7 +54,7 @@ const result = repeatStringNumTimes('abc', 3)
 
 // You are given a variable celsius representing a temperature in Celsius. Use the variable fahrenheit already defined and assign it the Fahrenheit temperature equivalent to the given Celsius temperature. Use the algorithm mentioned above to help convert the Celsius temperature to Fahrenheit.
 
-function convertToF(celsius) {
+const convertToF = (celsius) => {
   return (celsius * 9 / 5 ) + 32
 }
 
@@ -64,7 +64,7 @@ const result2 = convertToF(30)
 // CHALLENGE 4
 // Create a function that looks through an array arr and returns the first element in it that passes a 'truth test'. This means that given an element x, the 'truth test' is passed if func(x) is true. If no element passes the test, return undefined.
 
-function findElement(arr, func) {
+const findElement = (arr, func) => {
   const result = arr.find(val => func(val))
   return result
 }
@@ -77,7 +77,7 @@ const result3 = findElement([1, 2, 3, 4], num => num % 2 === 0)
 
 // Remember, you can iterate through an array with a simple for loop, and access each member with array syntax arr[i].
 
-function largestOfFour(arr) {
+const largestOfFour = (arr) => {
   const res = arr.map(subArr => {
     return Math.max(...subArr)
   })
@@ -95,7 +95,7 @@ const result4 = largestOfFour([[4, 5, 1, 3], [13, 27, 18, 26], [32, 35, 37, 39],
 //Return the length of the longest word in the provided sentence.
 //Your response should be a number.
 
-function findLongestWordLength(str) {
+const findLongestWordLength = (str) => {
   const arr = str.split(' ')
 
   const result = arr.sort((a, b) => b.length - a.length)
@@ -104,3 +104,13 @@ function findLongestWordLength(str) {
 }
 const result5 = findLongestWordLength('The quick brown fox jumped over the lazy dog')
 // console.log(result5)
+
+
+module.exports = {
+  factorialize, 
+  repeatStringNumTimes,
+  convertToF,
+  findElement,
+  largestOfFour,
+  findLongestWordLength
+}
