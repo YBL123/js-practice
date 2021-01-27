@@ -370,10 +370,10 @@ console.log('result21', result21)
 // Flatten a nested array. You must account for varying levels of nesting.
 
 // const steamrollArray = (arr) => {
-  // const x = [].concat(...arr)
-  // const newArr = [].concat(...x)
-  // const newNewArr = [].concat(...newArr)
-  // return newNewArr
+// const x = [].concat(...arr)
+// const newArr = [].concat(...x)
+// const newNewArr = [].concat(...newArr)
+// return newNewArr
 
 const steamrollArray = (arr, d = Infinity) => {
   return d > 0 ? arr.reduce((acc, val) => acc.concat(Array.isArray(val) ? steamrollArray(val, d - 1) : val), []) : arr.slice()
@@ -381,6 +381,100 @@ const steamrollArray = (arr, d = Infinity) => {
 
 const result22 = steamrollArray([1, {}, [3, [[4]]]])
 console.log('result22', result22)
+
+
+// CHALLENGE 23
+// Missing letters
+// Find the missing letter in the passed letter range and return it.
+// If all letters are present in the range, return undefined.
+
+const fearNotLetter = (str) => {
+  let compare = str.charCodeAt(0) // tells you were current letter is -> google definition
+  let missing 
+
+  str.split('').map((letter, i) => {
+    if (str.charCodeAt(i) === compare) {
+      ++compare
+    } else {
+      missing = String.fromCharCode(compare)
+    }
+  })
+
+  return missing
+
+}
+
+const result23 = fearNotLetter('abce')
+console.log('result23', result23)
+
+// CHALLENGE 24
+// Sum All Primes
+// A prime number is a whole number greater than 1 with exactly two divisors: 1 and itself.
+// For example, 2 is a prime number because it is only divisible by 1 and 2.
+// In contrast, 4 is not prime since it is divisible by 1, 2 and 4.
+// Rewrite sumPrimes so it returns the sum of all prime numbers that are less than or equal to num.
+
+const sumPrimes = (num) => {
+  let total = 0
+
+  function checkPrime(x) {
+    for (let j = 2; j < x; j++) {
+      if (x % j === 0) {
+        // false means the function carries on -> so in this case false means it is a prime number
+        return false
+      }
+    }
+    // else exit function it is not a prime number
+    return true
+  }
+  for (let i = 2; i <= num; i++) {
+    if (checkPrime(i)) {
+      // current vale of total + add i (prime numbers) each time
+      total += i
+    }
+  }
+  return total
+}
+
+const result24 = sumPrimes(977)
+console.log('result24', result24)
+
+// CHALLENGE 25
+// ADD ALL
+const addAll = (...nums) => {
+  console.log('nums', nums)
+  return nums.reduce((acc, num) => {
+    return acc + num
+  }, 0)
+}
+
+const result25 = addAll(2, 5, 6, 8 , 9) 
+console.log('result25', result25)
+
+// CHALLENGE 26
+// Smallest Common Multiple
+// Find the smallest common multiple of the provided parameters that can be evenly divided by both, as well as by all sequential numbers in the range between these parameters.
+// The range will be an array of two numbers that will not necessarily be in numerical order.
+// For example, if given 1 and 3, find the smallest common multiple of both 1 and 3 that is also evenly divisible by all numbers between 1 and 3. The answer here would be 6.
+
+const smallestCommons = (arr) => {
+  const newArr = arr.sort((a, b) => a - b)
+  const arr2 = []
+
+  for (let i = newArr[0]; i <= newArr[1]; i++) {
+    for (let j = 1; j <= 10000; j++) {
+      if (j % i === 0 && j % newArr[i - 1] === 0) {
+        arr2.push(j)
+        console.log('testingtesting', i)
+      }
+    }
+  }
+  console.log('arr2', arr2.slice(0, 5))
+}
+
+const result26 = smallestCommons([1,5])
+console.log('result26', result26)
+
 
 
 module.exports = {
