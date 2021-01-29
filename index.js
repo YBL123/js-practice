@@ -130,7 +130,9 @@ console.log(result6)
 // But for the purpose of this challenge, we would like you to use one of the JavaScript substring methods instead.
 
 const confirmEnding = (str, target) => {
-  return str.substring(str.length - 1) === target
+  // whatever the length of second parameter 
+  // subtracting the string length from the second argument, target to confrim the ending.
+  return str.substring(str.length - target.length) === target
 }
 
 const result7 = confirmEnding('Bastian', 'n')
@@ -249,12 +251,11 @@ console.log(result14)
 // Lastly, ["Alien", "line"], should return true because all of the letters in "line" are present in "Alien".
 
 const mutation = (arr) => {
-  const el1 = arr[0].toLowerCase().split('').sort().join('')
-  const el2 = arr[1].toLowerCase().split('').sort().join('')
-  console.log('arrays', el1, el2)
+  const el1 = arr[0].toLowerCase().split('')
+  const el2 = arr[1].toLowerCase().split('')
 
-  return el2.includes(el1) || el1.includes(el2)
-
+  return el2.every(item => el1.includes(item))
+  
 }
 
 const result15 = mutation(['Noel', 'Ole'])
@@ -465,7 +466,7 @@ const smallestCommons = (arr) => {
     for (let j = 1; j <= 10000; j++) {
       if (j % i === 0 && j % newArr[i - 1] === 0) {
         arr2.push(j)
-        console.log('testingtesting', i)
+        // console.log('testingtesting', i)
       }
     }
   }
@@ -476,6 +477,44 @@ const result26 = smallestCommons([1,5])
 console.log('result26', result26)
 
 
+// CHALLENGE 27
+// Arguments Optional
+// Create a function that sums two arguments together. If only one argument is provided, then return a function that expects one argument and returns the sum.
+// For example, addTogether(2, 3) should return 5, and addTogether(2) should return a function.
+// Calling this returned function with a single argument will then return the sum:
+// var sumTwoAnd = addTogether(2);
+// sumTwoAnd(3) returns 5.
+// If either argument isn't a valid number, return undefined.
+
+function addTogether(one, two) {
+  // if there's only one argument
+  if (typeof one !== 'number') {
+    return undefined
+  }
+  // checks for there's more than one argument and the second argument is a number
+  if (arguments.length > 1 && typeof two !== 'number') {
+    return undefined
+  }
+  // if there's only one argument...
+  if (arguments.length === 1) {
+    return function sumTwoAnd(three) {
+      if (typeof three !== 'number') {
+        return undefined
+      } else {
+        return three + one
+      }
+    }
+  }
+  return one + two
+  }
+
+const result27 = addTogether(2)([3])
+console.log('result27', result27)
+
+
+function add(a: Number, b: String) {
+  return a + b
+}
 
 module.exports = {
   factorialize, 
