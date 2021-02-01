@@ -512,9 +512,66 @@ const result27 = addTogether(2)([3])
 console.log('result27', result27)
 
 
-function add(a: Number, b: String) {
-  return a + b
+// CHALLENGE 28
+// Everything Be True
+// Check if the predicate (second argument) is truthy on all elements of a collection (first argument).
+// In other words, you are given an array collection of objects.
+// The predicate pre will be an object property and you need to return true if its value is truthy. Otherwise, return false.
+// In JavaScript, truthy values are values that translate to true when evaluated in a Boolean context.
+// Remember, you can access object properties through either dot notation or [] notation.
+
+const truthCheck = (collection, pre) => {
+  const check = collection.every(item => item[pre])
+  console.log('check', check)
 }
+
+const result28 = truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")
+console.log('result28', result28)
+
+
+// CHALLENGE 29
+// Drop it
+// Given the array arr, iterate through and remove each element starting from the first element (the 0 index)
+// until the function func returns true when the iterated element is passed through it.
+// Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.
+
+const dropElements = (arr, func)  => {
+  let dupArr = []
+  const newArr = arr.filter((item, i)=> {
+    if (arr.filter(num => num === item).length > 1) {
+      dupArr.push(i)
+    }
+    return func(item)
+  })
+  const newDupArr = [...new Set(dupArr)]
+  const ridOfDup = newDupArr.filter(item => !newArr.includes(item))
+  return newArr.concat(ridOfDup)
+}
+
+const result29 = dropElements([0, 1, 0, 1], function(n) {return n === 1;})
+console.log('result29', result29)
+
+// CHALLENGE 30
+// Spinal Tap Case
+// Convert a string to spinal case. Spinal case is all-lowercase-words-joined-by-dashes.
+
+const spinalCase = (str) => {
+  if (str.includes('_')) {
+    return str.toLowerCase().split('_').join('-')
+  }
+  if (str.includes(' ') && str.includes('-')) {
+    return str.split(/(?=[A-Z])/).join(' ').split('-').join(' ').replace('  ', ' ').split(' ').join('-').toLowerCase()
+  }
+  if (!str.includes(' ')) {
+    return str.split(/(?=[A-Z])/).join('-').toLowerCase()
+  }
+  return str.toLowerCase().split(' ').join('-')
+}
+
+const result30 = spinalCase('Teletubbies say Eh-oh')
+console.log('result30', result30)
+
+
 
 module.exports = {
   factorialize, 
