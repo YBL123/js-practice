@@ -571,6 +571,25 @@ const spinalCase = (str) => {
 const result30 = spinalCase('Teletubbies say Eh-oh')
 console.log('result30', result30)
 
+// CHALLENGE 31
+// Wherefore art thou
+// Make a function that looks through an array of objects (first argument) and returns an array of all objects that have matching name and value pairs (second argument).
+// Each name and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.
+
+const whatIsInAName = (collection, source) => {
+  const collectionArr = collection.flat()
+
+  console.log('source', Object.entries(source).forEach(object => object.toString()))
+
+  let res = collectionArr.filter(obj => {
+    console.log(obj)
+    return Object.entries(obj).toString().includes(Object.entries(source).toString())
+  })
+  return res
+}
+
+const result31 = whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 })
+console.log('result31', result31)
 
 
 module.exports = {
