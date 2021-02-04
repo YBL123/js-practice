@@ -120,7 +120,7 @@ const reverseString = (str) => {
 }
 
 const result6 = reverseString('hello')
-console.log(result6)
+// console.log(result6)
 
 
 // CHALLENGE 8
@@ -136,7 +136,7 @@ const confirmEnding = (str, target) => {
 }
 
 const result7 = confirmEnding('Bastian', 'n')
-console.log(result7)
+// console.log(result7)
 
 // CHALLENGE 9
 // Truncate a String
@@ -154,7 +154,7 @@ const truncateString = (str, num) => {
 } 
 
 const result9 = truncateString('A-tisket a-tasket A green and yellow basket', 'A-tisket a-tasket A green and yellow basket'.length )
-console.log(result9)
+// console.log(result9)
 
 // CHALLENGE 10
 // Boo who
@@ -169,7 +169,7 @@ const booWho = (bool) => {
 }
 
 const result10 = booWho(NaN)
-console.log(result10)
+// console.log(result10)
 
 // CHALLENGE 11
 // Title Case a Sentence
@@ -183,7 +183,7 @@ const titleCase = (str) => {
 } 
 
 const result11 = titleCase('I\'m a little tea pot')
-console.log(result11)
+// console.log(result11)
 
 // CHALLENGE 12
 // Slice and Splice
@@ -199,14 +199,14 @@ const frankenSplice = (arr1, arr2, n) => {
 }
 
 const result12 = frankenSplice([1, 2], ['a', 'b'], 1)
-console.log(result12)
+// console.log(result12)
 
 const example = ['claw', 'tentacle']
 const example2 = ['head', 'shoulders', 'knees', 'toes']
 const n = 2
 example2.splice(n, 0, ...example)
 
-console.log('example', example2)
+// console.log('example', example2)
 
 // CHALLENGE 13
 // Falsy Bouncer
@@ -221,7 +221,7 @@ const bouncer = (arr) => {
 }
 
 const result13 = bouncer([7, 'ate', '', false, 9])
-console.log(result13)
+// console.log(result13)
 
 // CHALLENGE 14
 // Where do I Belong
@@ -239,7 +239,7 @@ const getIndexToIns = (arr, num) => {
 }
 
 const result14 = getIndexToIns([40, 60], 50)
-console.log(result14)
+// console.log(result14)
 
 // CHALLENGE 15
 // Mutations
@@ -259,7 +259,7 @@ const mutation = (arr) => {
 }
 
 const result15 = mutation(['Noel', 'Ole'])
-console.log('result15', result15)
+// console.log('result15', result15)
 
 // CHALLENGE 16
 // Chunky Monkey
@@ -282,7 +282,7 @@ const chunkArrayInGroups = (arr, size) => {
 }
 
 const result16 = chunkArrayInGroups(['a', 'b', 'c', 'd'], 2)
-console.log(result16)
+// console.log(result16)
 
 // CHALLENGE 17
 // Sum All Numbers in a Range
@@ -300,7 +300,7 @@ const sumAll = (arr) => {
 }
 
 const result17 = sumAll([4, 1])
-console.log(result17)
+// console.log(result17)
 
 // CHALLENGE 18
 // Seek and Destroy
@@ -312,7 +312,7 @@ const destroyer = (arr, ...rest) => {
 }
 
 const result18 = destroyer([1, 2, 3, 1, 2, 3], 2, 3)
-console.log('hereeee', result18)
+// console.log('hereeee', result18)
 
 // CHALLENGE 19
 // Diff Two Arrays
@@ -328,7 +328,7 @@ const diffArray = (arr1, arr2) => {
 }
 
 const result19 = diffArray(['andesite', 'grass', 'dirt', 'pink wool', 'dead shrub'], ['diorite', 'andesite', 'grass', 'dirt', 'dead shrub'])
-console.log('result19', result19)
+// console.log('result19', result19)
 
 // CHALLENGE 20
 // Search and Replace
@@ -348,7 +348,7 @@ const myReplace = (str, before, after) => {
 }
 
 const result20 = myReplace('I think we should look up there', 'up', 'Down')
-console.log('result20', result20)
+// console.log('result20', result20)
 
 // CHALLENGE 21
 // Sorted Union
@@ -364,7 +364,7 @@ const uniteUnique = (arr, ...rest) => {
 }
 
 const result21 = uniteUnique([1, 2, 3], [5, 2, 1, 4], [2, 1], [6, 7, 8])
-console.log('result21', result21)
+// console.log('result21', result21)
 
 // CHALLENGE 22
 // Steamroller
@@ -381,7 +381,7 @@ const steamrollArray = (arr, d = Infinity) => {
 }
 
 const result22 = steamrollArray([1, {}, [3, [[4]]]])
-console.log('result22', result22)
+// console.log('result22', result22)
 
 
 // CHALLENGE 23
@@ -406,7 +406,7 @@ const fearNotLetter = (str) => {
 }
 
 const result23 = fearNotLetter('abce')
-console.log('result23', result23)
+// console.log('result23', result23)
 
 // CHALLENGE 24
 // Sum All Primes
@@ -438,19 +438,19 @@ const sumPrimes = (num) => {
 }
 
 const result24 = sumPrimes(977)
-console.log('result24', result24)
+// console.log('result24', result24)
 
 // CHALLENGE 25
 // ADD ALL
 const addAll = (...nums) => {
-  console.log('nums', nums)
+  // console.log('nums', nums)
   return nums.reduce((acc, num) => {
     return acc + num
   }, 0)
 }
 
 const result25 = addAll(2, 5, 6, 8 , 9) 
-console.log('result25', result25)
+// console.log('result25', result25)
 
 // CHALLENGE 26
 // Smallest Common Multiple
@@ -470,11 +470,11 @@ const smallestCommons = (arr) => {
       }
     }
   }
-  console.log('arr2', arr2.slice(0, 5))
+  // console.log('arr2', arr2.slice(0, 5))
 }
 
 const result26 = smallestCommons([1,5])
-console.log('result26', result26)
+// console.log('result26', result26)
 
 
 // CHALLENGE 27
@@ -509,7 +509,7 @@ function addTogether(one, two) {
   }
 
 const result27 = addTogether(2)([3])
-console.log('result27', result27)
+// console.log('result27', result27)
 
 
 // CHALLENGE 28
@@ -522,11 +522,11 @@ console.log('result27', result27)
 
 const truthCheck = (collection, pre) => {
   const check = collection.every(item => item[pre])
-  console.log('check', check)
+  // console.log('check', check)
 }
 
 const result28 = truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "Dipsy", "sex": "male"}, {"user": "Laa-Laa", "sex": "female"}, {"user": "Po", "sex": "female"}], "sex")
-console.log('result28', result28)
+// console.log('result28', result28)
 
 
 // CHALLENGE 29
@@ -549,7 +549,7 @@ const dropElements = (arr, func)  => {
 }
 
 const result29 = dropElements([0, 1, 0, 1], function(n) {return n === 1;})
-console.log('result29', result29)
+// console.log('result29', result29)
 
 // CHALLENGE 30
 // Spinal Tap Case
@@ -569,7 +569,7 @@ const spinalCase = (str) => {
 }
 
 const result30 = spinalCase('Teletubbies say Eh-oh')
-console.log('result30', result30)
+// console.log('result30', result30)
 
 // CHALLENGE 31
 // Wherefore art thou
@@ -579,17 +579,15 @@ console.log('result30', result30)
 const whatIsInAName = (collection, source) => {
   const collectionArr = collection.flat()
 
-  console.log('source', Object.entries(source).forEach(object => object.toString()))
-
   let res = collectionArr.filter(obj => {
-    console.log(obj)
+    // console.log(obj)
     return Object.entries(obj).toString().includes(Object.entries(source).toString())
   })
   return res
 }
 
 const result31 = whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 })
-console.log('result31', result31)
+// console.log('result31', result31)
 
 
 module.exports = {
