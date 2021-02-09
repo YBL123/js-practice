@@ -547,8 +547,18 @@ const dropElements = (arr, func)  => {
   }
 }
 
+// const dropElements = (arr, func)  => {
+//   const res = arr.map((ele, i) => {
+//     if (func(ele)) {
+//       console.log(ele)
+//       return arr.slice(ele)
+//     }
+//   }) 
+//   return res
+// }
+
 const result29 = dropElements([0, 1, 0, 1], function(n) {return n === 1;})
-console.log('result29', result29)
+// console.log('result29', result29)
 
 // CHALLENGE 30
 // Spinal Tap Case
@@ -590,7 +600,47 @@ const result31 = whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "app
 
 
 // CHALLENGE 32 
+// Sum All Odd Fibonacci Numbers
+// Given a positive integer num, return the sum of all odd Fibonacci numbers that are less than or equal to num.
+// The first two numbers in the Fibonacci sequence are 1 and 1. Every additional number in the sequence is the sum of the two previous numbers.
+// The first six numbers of the Fibonacci sequence are 1, 1, 2, 3, 5 and 8.
+// For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less than or equal to 10 are 1, 1, 3, and 5.
 
+// const sumFibs = (num) => {
+//   var sum = 0;
+//   var fib = 0;
+
+//   while (sum <= num) {
+//     var currentFib = fibo(fib);
+//     if (currentFib % 2 === 1 && currentFib <= num) {
+//       sum += currentFib;
+//     }
+//     fib++;
+//   }
+//   return sum;
+// }
+
+// function fibo(n) {
+//   if (n <= 1) return n;
+//   return fibo(n - 1) + fibo(n - 2);
+// }
+
+const sumFibs = (num) => {
+  // starting off 1, 1
+  let arr = [1, 1];
+  // let = 2 -> starting after the second 1
+  for (let i = 2; i < num + 1; i++){
+    // pushing at index i - 2  (to get to 0 and start from the beginning of array, + 1 -> 1 + 1 = 2 etc)
+    // last 2 numbers added together to get to value of current number
+      arr.push(arr[i - 2] + arr[i - 1])
+  }
+  // if n is less than or equal to num and is an odd number. reduce and sum of all odd fibonacci numbers.
+return arr.filter(n => n <= num && n % 2 !== 0).reduce((acc, n) =>  acc + n)
+}
+
+
+const result32 = sumFibs(1000);
+console.log('result32', result32)
 
 
 
