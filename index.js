@@ -536,20 +536,19 @@ const result28 = truthCheck([{"user": "Tinky-Winky", "sex": "male"}, {"user": "D
 // Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.
 
 const dropElements = (arr, func)  => {
-  let dupArr = []
-  const newArr = arr.filter((item, i)=> {
-    if (arr.filter(num => num === item).length > 1) {
-      dupArr.push(i)
+  for (let i = 0; i <= arr.length - 1; i++) {
+    if (func(arr[i])) {
+      //slicing at i -> first element with func(arr[i]) value
+      return arr.slice(i)
+      // else if it's at the last index and hasn't found anything -> return empty array
+    } else if (i === arr.length - 1) {
+      return []
     }
-    return func(item)
-  })
-  const newDupArr = [...new Set(dupArr)]
-  const ridOfDup = newDupArr.filter(item => !newArr.includes(item))
-  return newArr.concat(ridOfDup)
+  }
 }
 
 const result29 = dropElements([0, 1, 0, 1], function(n) {return n === 1;})
-// console.log('result29', result29)
+console.log('result29', result29)
 
 // CHALLENGE 30
 // Spinal Tap Case
@@ -588,6 +587,14 @@ const whatIsInAName = (collection, source) => {
 
 const result31 = whatIsInAName([{ "apple": 1, "bat": 2 }, { "apple": 1 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "cookie": 2 })
 // console.log('result31', result31)
+
+
+// CHALLENGE 32 
+
+
+
+
+
 
 
 module.exports = {
