@@ -729,7 +729,7 @@ const translatePigLatin = (str) => {
         const cons = strArr.splice(0, 1).toString();
         const res = [...strArr, cons]
         console.log(res)
-        return res.join('')
+        return res.join('') + 'ay'
       }
     }
   }
