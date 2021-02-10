@@ -724,19 +724,25 @@ const translatePigLatin = (str) => {
       // console.log(vowelArr[j])
       if (strArr[0] === vowelArr[j]) {
         return str + 'way';
-        // } else if (strArr.some(char => consonantsArr.includes(char) )) {
-      } else if (strArr[0].includes('c')) {
-        const cons = strArr.splice(0, 1).toString();
-        const res = [...strArr, cons]
-        console.log(res)
-        return res.join('') + 'ay'
-      }
+      } 
     }
   }
+  const consArr = []
+  for (let a = 0; a <= strArr.length; a ++) {
+    // console.log('a', strArr[a])
+    for (let b = 0; b <consonantsArr.length; b++) {
+      if (strArr[a] === consonantsArr[b]) {
+        console.log('string', strArr[a])
+        consArr.push(strArr[a])
+        console.log('consArr', [...strArr, ...consArr])
+      }
+    }
+}
   
 };
 
-const result33 = translatePigLatin('california');
+// const result33 = translatePigLatin('california');
+const result33 = translatePigLatin('glove');
 console.log('result33', result33);
 
 module.exports = {
@@ -747,3 +753,20 @@ module.exports = {
   largestOfFour,
   findLongestWordLength,
 };
+
+
+// for (let b = 0; b < consonantsArr.length; b++) {
+//   console.log('b',consonantsArr[b])
+// if (strArr[0] === consonantsArr[b]) {
+//   const arr = []
+//   consArr = arr.push(strArr[a])
+//   // console.log('boop',consArr)
+// }
+// //         if (strArr[0] === consonantsArr[b]) {
+// //         // const cons = strArr.splice(b[0], 1).toString();
+// //         const consArr = strArr.push();
+// //         const res = [...strArr, cons]
+// //         console.log(res)
+
+// //     return res.join('') + 'ay'
+// }
