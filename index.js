@@ -623,21 +623,33 @@ const result30 = spinalCase('Teletubbies say Eh-oh');
 
 const whatIsInAName = (collection, source) => {
   const collectionArr = collection.flat();
+  // console.log('collectionArr', collectionArr);
+  // console.log('source', source);
 
-  let res = collectionArr.filter((obj) => {
-    // console.log(obj)
-    return Object.entries(obj)
-      .toString()
-      .includes(Object.entries(source).toString());
-  });
-  return res;
+  // console.log(`${key} ${value}`);
+
+  const res = collectionArr.map(object => {
+    for (const [key, value] of Object.entries(object)) {
+      // console.log(`a ${key} ${value}`);
+      for (const [key, value] of Object.entries(source)) {
+          // console.log(`b ${key} ${value}`);
+          if (object.value === source.value && object.key === source.key) {
+            // console.log('match', object, source)
+            return object
+          }
+      }
+    }
+  })
+
+  return res
+
 };
 
 const result31 = whatIsInAName(
   [{ apple: 1, bat: 2 }, { apple: 1 }, { apple: 1, bat: 2, cookie: 2 }],
   { apple: 1, cookie: 2 }
 );
-// console.log('result31', result31)
+// console.log('result31', result31);
 
 // CHALLENGE 32
 // Sum All Odd Fibonacci Numbers
@@ -692,7 +704,6 @@ const result32 = sumFibs(1000);
 
 const translatePigLatin = (str) => {
   const strArr = str.split('');
-  console.log(strArr);
 
   const vowelArr = ['a', 'e', 'i', 'o', 'u'];
 
@@ -707,7 +718,7 @@ const translatePigLatin = (str) => {
   }
   const consArr = [];
   let isVowel = false;
-  let i = 0
+  let i = 0;
 
   do {
     if (vowelArr.includes(strArr[i])) {
@@ -719,17 +730,28 @@ const translatePigLatin = (str) => {
   } while (!isVowel);
 
   //option 1 - will remove any similar cluster all over string
-  let newStr = str.replace(consArr.join(''), '') + consArr.join('') + 'ay'
+  let newStr = str.replace(consArr.join(''), '') + consArr.join('') + 'ay';
 
   // console.log('new', newStr)
-  return newStr
-
+  return newStr;
 };
 
 // console.log('final', ...strArr, ...consArr)
 // const result33 = translatePigLatin('california');
 const result33 = translatePigLatin('glove');
 // console.log('result33', result33);
+
+
+//CHALLENGE 34
+// Convert HTML Entities
+// Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+
+const convertHTML = (str) => {
+  return str;
+}
+
+const result34 = convertHTML("Dolce & Gabbana");
+console.log('result34', result34)
 
 module.exports = {
   factorialize,
