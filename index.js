@@ -745,6 +745,11 @@ const result33 = translatePigLatin('glove');
 //CHALLENGE 34
 // Convert HTML Entities
 // Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
+// & = &amp
+// < = &lt
+// > = &gt
+// 'Stuff in "quotation marks"' = "Stuff in &quot;quotation marks&quot;"
+// "Schindler's List" = "Schindler&apos;s List"
 
 const convertHTML = (str) => {
   return str;
