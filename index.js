@@ -622,28 +622,14 @@ const result30 = spinalCase('Teletubbies say Eh-oh');
 // Each name and value pair of the source object has to be present in the object from the collection if it is to be included in the returned array.
 
 const whatIsInAName = (collection, source) => {
-  const collectionArr = collection.flat();
-  // console.log('collectionArr', collectionArr);
-  // console.log('source', source);
+  var srcKeys = Object.keys(source);
 
-  // console.log(`${key} ${value}`);
-
-  const res = collectionArr.map(object => {
-    for (const [key, value] of Object.entries(object)) {
-      // console.log(`a ${key} ${value}`);
-      for (const [key, value] of Object.entries(source)) {
-          // console.log(`b ${key} ${value}`);
-          if (object.value === source.value && object.key === source.key) {
-            // console.log('match', object, source)
-            return object
-          }
-      }
-    }
-  })
-
-  return res
-
-};
+  return collection.filter(obj => {
+    return srcKeys.every(key => {
+      return obj.hasOwnProperty(key) && obj[key] === source[key];
+    });
+  });
+}
 
 const result31 = whatIsInAName(
   [{ apple: 1, bat: 2 }, { apple: 1 }, { apple: 1, bat: 2, cookie: 2 }],
@@ -741,8 +727,7 @@ const translatePigLatin = (str) => {
 const result33 = translatePigLatin('glove');
 // console.log('result33', result33);
 
-
-//CHALLENGE 34
+// CHALLENGE 34
 // Convert HTML Entities
 // Convert the characters &, <, >, " (double quote), and ' (apostrophe), in a string to their corresponding HTML entities.
 // & = &amp
@@ -753,10 +738,38 @@ const result33 = translatePigLatin('glove');
 
 const convertHTML = (str) => {
   return str;
-}
+};
 
-const result34 = convertHTML("Dolce & Gabbana");
-console.log('result34', result34)
+const result34 = convertHTML('Dolce & Gabbana');
+// console.log('result34', result34)
+
+
+// CHALLENGE 35
+// Make a Person
+
+// Fill in the object constructor with the following methods below:
+// getFirstName()
+// getLastName()
+// getFullName()
+// setFirstName(first)
+// setLastName(last)
+// setFullName(firstAndLast)
+
+//Run the tests to see the expected output for each method.
+// The methods that take an argument must accept only one argument and it has to be a string.
+// These methods must be the only available means of interacting with the object.
+
+var Person = function(firstAndLast) {
+  // Only change code below this line
+  // Complete the method below and implement the others similarly
+  this.getFullName = function() {
+    return "";
+  };
+  return firstAndLast;
+};
+
+var bob = new Person('Bob Ross');
+bob.getFullName();
 
 module.exports = {
   factorialize,
